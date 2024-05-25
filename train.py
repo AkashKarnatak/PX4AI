@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import os
-import glob
+from glob import glob
 import numpy as np
 import torch
 from torch.nn import functional as F
