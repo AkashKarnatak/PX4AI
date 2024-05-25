@@ -48,6 +48,7 @@ class MultiheadAttention(nn.Module):
 
         out = out.transpose(1, 2).contiguous().view(B, T, self.n_heads * self.head_size)
         out = self.proj(out)
+        return out
 
 
 class Block(nn.Module):
