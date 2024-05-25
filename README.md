@@ -33,6 +33,12 @@ Only a selected subset of attributes from the Ulog files was used for training.
    conda env create -f environment.yml
    ```
 
+then activate the environment using,
+
+   ```bash
+   conda activate px4ai
+   ```
+
 ### 4. Prepare dataset:
 
 Preprocess ulog files in csv format as described [here](https://github.com/AkashKarnatak/annotate_px4_logs?tab=readme-ov-file#6-create-database).
