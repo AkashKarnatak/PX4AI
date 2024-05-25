@@ -37,6 +37,7 @@ def create_train_test_split():
     test_dir = os.path.join(cwd, "data/test")
 
     if os.path.isdir(train_dir) and os.path.isdir(val_dir) and os.path.isdir(test_dir):
+        print('train, val and test dirs already exist')
         return
 
     print('Creating train, val and test dirs...')
@@ -62,3 +63,4 @@ def create_train_test_split():
         shutil.copy2(f, val_dir)
     for f in test_csv_files:
         shutil.copy2(f, test_dir)
+    print('Successfully created train, val and test dirs')
