@@ -13,6 +13,8 @@ the norm.
 PX4AI was trained on mission mode flight data from approximately 500 log files of hexacopters and quadcopters.
 Only a selected subset of attributes from the Ulog files was used for training.
 
+![px4ai](https://github.com/AkashKarnatak/PX4AI/assets/54985621/bc3dc53d-3714-4b70-98c4-944f1e7e3e8a)
+
 ## Setup and Installation
 
 ### 1. Clone the repository:
