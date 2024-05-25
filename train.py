@@ -25,7 +25,7 @@ model = AnomalyDetector().to(device)
 optimizer = torch.optim.Adam(model.parameters(), lr=3e-4)
 
 # train
-epochs = 2
+epochs = 40
 batch_size = 512
 max_steps = epochs * (sum([len(df) for df in train_dfs]) / (window_size * batch_size))
 
