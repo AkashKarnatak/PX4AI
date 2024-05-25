@@ -15,13 +15,15 @@ cwd = os.path.dirname(os.path.abspath(__file__))
 
 # load data
 create_train_test_split()
-test_csv_files = glob(os.path.join(cwd, "./data/test/*"))
+test_csv_files = glob(os.path.join(cwd, "data/test/*"))
 test_dfs = load_csv(test_csv_files)
+print('Finished loading data')
 
 # load model
 model = AnomalyDetector().to(device)
 model.load_state_dict(torch.load("./checkpoints/transformer-anomaly-annotator-best.pt"))
 model.eval()
+print('Successfully loaded model')
 
 # train
 epochs = 2

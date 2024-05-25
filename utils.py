@@ -32,14 +32,16 @@ def load_csv(csv_files: List[str]):
 def create_train_test_split():
     cwd = os.path.dirname(os.path.abspath(__file__))
 
-    train_dir = os.path.join(cwd, "./data/train")
-    val_dir = os.path.join(cwd, "./data/val")
-    test_dir = os.path.join(cwd, "./data/test")
+    train_dir = os.path.join(cwd, "data/train")
+    val_dir = os.path.join(cwd, "data/val")
+    test_dir = os.path.join(cwd, "data/test")
 
     if os.path.isdir(train_dir) and os.path.isdir(val_dir) and os.path.isdir(test_dir):
         return
 
-    data_dir = os.path.join(cwd, "./data/csv_files")
+    print('Creating train, val and test dirs...')
+
+    data_dir = os.path.join(cwd, "data/csv_files")
     csv_files = [
         os.path.join(data_dir, f) for f in os.listdir(data_dir) if f.endswith(".csv")
     ]

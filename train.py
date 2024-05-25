@@ -16,8 +16,9 @@ cwd = os.path.dirname(os.path.abspath(__file__))
 
 # load data
 create_train_test_split()
-train_csv_files = glob(os.path.join(cwd, "./data/train/*"))
+train_csv_files = glob(os.path.join(cwd, "data/train/*"))
 train_dfs = load_csv(train_csv_files)
+print('Finished loading data')
 
 # load model
 model = AnomalyDetector().to(device)
@@ -58,12 +59,12 @@ while itr <= max_steps:
     if itr % 100 == 0 and loss.item() < last_loss:
         torch.save(
             model.state_dict(),
-            os.path.join(cwd, "./checkpoints/transformer-anomaly-annotator-best.pt"),
+            os.path.join(cwd, "checkpoints/transformer-anomaly-annotator-best.pt"),
         )
         last_loss = loss.item()
 
     itr += 1
 
 torch.save(
-    model.state_dict(), os.path.join(cwd, "./checkpoints/transformer-anomaly-annotator-latest.pt")
+    model.state_dict(), os.path.join(cwd, "checkpoints/transformer-anomaly-annotator-latest.pt")
 )
