@@ -68,6 +68,7 @@ class Block(nn.Module):
     def forward(self, x):
         x = x + self.att(self.ln1(x))
         x = x + self.ffwd(self.ln2(x))
+        return x
 
 
 class AnomalyDetector(nn.Module):
@@ -99,3 +100,4 @@ class AnomalyDetector(nn.Module):
     def forward(self, x):
         out = self.encoder(x)
         out = self.decoder(out)
+        return out
